@@ -60,7 +60,6 @@ const items = [
     { id: "3089", name: "Rabadon's Deathcap" },
     { id: "3194", name: "Force of Nature" },
     { id: "3091", name: "Wit's End" },
-    { id: "6691", name: "Duskblade of Draktharr" },
     { id: "3814", name: "Edge of Night" },
     { id: "3165", name: "Morellonomicon" },
     { id: "6653", name: "Liandry’s Anguish" },
