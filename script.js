@@ -32,18 +32,57 @@ const secondaryRunes = ["Domination", "Precision", "Resolve", "Sorcery", "Inspir
 const spells = [
     "SummonerFlash", "SummonerHeal", "SummonerDot", "SummonerTeleport", "SummonerExhaust", "SummonerBarrier"
 ];
+
 const items = [
     { id: "3153", name: "Blade of the Ruined King" },
     { id: "3071", name: "Black Cleaver" },
     { id: "3031", name: "Infinity Edge" },
-    { id: "3157", name: "Zhonya's Hourglass" },
-    { id: "3116", name: "Rylai's Crystal Scepter" },
-    { id: "3089", name: "Rabadon's Deathcap" },
+    { id: "6675", name: "Navori Quickblades" },
+    { id: "3508", name: "Essence Reaver" },
     { id: "6673", name: "Kraken Slayer" },
-    { id: "6630", name: "Goredrinker" },
+    { id: "3036", name: "Lord Dominik’s Regards" },
+    { id: "6672", name: "Immortal Shieldbow" },
+    { id: "6676", name: "The Collector" },
+    { id: "3094", name: "Rapid Firecannon" },
+    { id: "3124", name: "Guinsoo's Rageblade" },
+    { id: "3095", name: "Stormrazor" },
+    { id: "3087", name: "Statikk Shiv" },
+    { id: "3074", name: "Ravenous Hydra" },
+    { id: "3053", name: "Sterak’s Gage" },
+    { id: "3078", name: "Trinity Force" },
+    { id: "3026", name: "Guardian Angel" },
+    { id: "3083", name: "Warmog's Armor" },
+    { id: "3143", name: "Randuin's Omen" },
+    { id: "3065", name: "Spirit Visage" },
+    { id: "6693", name: "Eclipse" },
+    { id: "6655", name: "Luden’s Tempest" },
+    { id: "3157", name: "Zhonya's Hourglass" },
+    { id: "3089", name: "Rabadon's Deathcap" },
+    { id: "3194", name: "Force of Nature" },
+    { id: "3091", name: "Wit's End" },
     { id: "6691", name: "Duskblade of Draktharr" },
-    { id: "6655", name: "Luden's Tempest" }
+    { id: "3814", name: "Edge of Night" },
+    { id: "3165", name: "Morellonomicon" },
+    { id: "6653", name: "Liandry’s Anguish" },
+    { id: "6632", name: "Divine Sunderer" },
+    { id: "6665", name: "Turbo Chemtank" },
+    { id: "3193", name: "Gargoyle Stoneplate" },
+    { id: "3110", name: "Frozen Heart" },
+    { id: "4633", name: "Riftmaker" },
+    { id: "4637", name: "Demonic Embrace" },
+    { id: "4636", name: "Night Harvester" },
+    { id: "3161", name: "Spear of Shojin" },
+    { id: "3181", name: "Hullbreaker" },
+    { id: "3092", name: "Frost Queen's Claim" },
+    { id: "3102", name: "Banshee's Veil" },
+    { id: "3041", name: "Mejai's Soulstealer" },
+    { id: "4643", name: "Ironspike Whip" },
+    { id: "6692", name: "Youmuu's Ghostblade" },
+    { id: "6035", name: "Cosmic Drive" },
+    { id: "3027", name: "Rod of Ages" },
+    { id: "6662", name: "Frostfire Gauntlet" },
 ];
+
 
 // Helper function to retrieve images, handling apostrophes, spaces, and capitalization
 function getChampionImage(champion) {
@@ -82,10 +121,22 @@ document.getElementById("generate-btn").addEventListener("click", () => {
         secondaryRune = randomize(secondaryRunes);
     }
 
-    // Randomize summoner spells, ensuring they are not the same
-    let summonerSpells = [randomize(spells), randomize(spells)];
-    while (summonerSpells[0] === summonerSpells[1]) {
-        summonerSpells[1] = randomize(spells); // Reselect the second spell if the first and second are the same
+    // Randomize summoner spells
+    let summonerSpells = [];
+
+    if (role === "Jungle") {
+        // Ensure Smite is one of the spells for Jungle role
+        summonerSpells = ["SummonerSmite", randomize(spells)];
+        // Ensure the second spell is not Smite
+        while (summonerSpells[1] === "SummonerSmite") {
+            summonerSpells[1] = randomize(spells);
+        }
+    } else {
+        // For other roles, ensure the spells are not the same
+        summonerSpells = [randomize(spells), randomize(spells)];
+        while (summonerSpells[0] === summonerSpells[1]) {
+            summonerSpells[1] = randomize(spells);
+        }
     }
 
     const item = randomize(items);
