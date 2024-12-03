@@ -48,26 +48,32 @@ const items = [
     { id: "3124", name: "Guinsoo's Rageblade" },
     { id: "3095", name: "Stormrazor" },
     { id: "3087", name: "Statikk Shiv" },
-    { id: "6692", name: "Sundered Sky" },
+    { id: "6694", name: "Sundered Sky" }, // Custom, representa el ítem Sundered Sky
     { id: "3074", name: "Ravenous Hydra" },
+    { id: "3748", name: "Titanic Hydra" },
     { id: "3053", name: "Sterak’s Gage" },
     { id: "3181", name: "Hullbreaker" },
     { id: "6631", name: "Stridebreaker" },
-    { id: "6653", name: "Experimental Hexplate" },
+    { id: "6615", name: "Experimental Hexplate" },
     { id: "3091", name: "Wit’s End" },
     { id: "6693", name: "Eclipse" },
     { id: "3078", name: "Trinity Force" },
     { id: "3071", name: "Black Cleaver" },
     { id: "3161", name: "Spear of Shojin" },
     { id: "4644", name: "Dawncore" },
+    { id: "3085", name: "Runaan's Hurricane" },
+    { id: "6653", name: "Liandry's Torment" },
+    { id: "3083", name: "Warmog's Armor" },
+    { id: "3075", name: "Thornmail" },
+    { id: "7029", name: "Opportunity" }, // Custom ID, representa el ítem Opportunity
+    { id: "3179", name: "Umbral Glaive" },
     { id: "6617", name: "Echoes of Helia" },
+    { id: "3190", name: "Knight's Vow" },
     { id: "6616", name: "Staff of Flowing Water" },
     { id: "3504", name: "Ardent Censer" },
     { id: "3089", name: "Rabadon's Deathcap" },
     { id: "3190", name: "Locket of the Iron Solari" },
-    { id: "3099", name: "Knight's Vow" },
     { id: "3050", name: "Zeke's Convergence" },
-    // Añade el resto de ítems según sea necesario
 ];
 
 // Helper function to retrieve images, handling apostrophes, spaces, and capitalization
